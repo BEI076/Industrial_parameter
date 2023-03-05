@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  /* font-family: 'Sora', sans-serif; */
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  /* padding: 40px; */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.switch-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  margin: 2px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.container-content {
+  display: none;
+}
+
+.container-content.active {
+  display: block;
+}
+
+h1 {
+  margin: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Add animation to the form container */
+.container {
+  animation: container-show 0.3s ease-in-out forwards;
+}
+
+@keyframes container-show {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.gass-container {
+  margin: 0 auto;
+  padding: 30px;
+  flex-direction: column;
+  /* border: solid red 2px; */
+  /* margin: 20px; */
+  width: 35%;
+}
+
+.sensor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.sensor-value {
+  padding: 10px;
+  color: rgb(22, 22, 22);
+}
+
+.exhust-fan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.on {
+  background-color: #228b22;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+.on:hover {
+  background-color: #146d14;
+}
+.off {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 10px;
+  width: 30%;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+.off:hover {
+  background-color: #e70505;
+}
+.buzzer {
+  padding: 10px;
+  /* border: solid 2px red; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.buzzer .buzzer-btn {
+  /* width: 50px; */
+  width: 100%;
+  padding: 10px;
+  background-color: #ff6600;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.buzzer .buzzer-btn:hover {
+  background-color: #cf5605;
+}
+
+.notification {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: none;
+  /* border: 2px solid red; */
+  margin-top: 20px;
+}
+
+.notification-btn {
+  width: 100%;
+  /* padding: 10px; */
+  background-color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+.notification-btn:hover {
+  background-color: #0c61bb;
+}
+
+.flame-detection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: none;
+  /* border: 2px solid red; */
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
+}
+
+.flame-btn {
+  width: 100%;
+  /* padding: 10px; */
+  background-color: #ff0000;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.flame-btn:hover {
+  background-color: #d10000;
+}

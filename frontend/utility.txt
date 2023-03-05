@@ -1,0 +1,7 @@
+npm install --save-dev jsonwebtoken bcrypt body-parser cors dotenv express mysql nodemon request-promise sha256 uuidv4
+
+
+
+npm list --depth=0
+npm list --depth=0 > requirements.txt
+npm install --save-exact --save-dev < requirements.txt
