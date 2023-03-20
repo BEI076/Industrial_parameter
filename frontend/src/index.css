@@ -106,7 +106,7 @@ button[type="submit"]:hover {
   flex-direction: column;
   /* border: solid red 2px; */
   /* margin: 20px; */
-  width: 35%;
+  width: 50%;
 }
 
 .sensor {
