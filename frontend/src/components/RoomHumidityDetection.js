@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { onValue, ref, update } from "firebase/database";
 import StartFirebase from "../firebase/config";
+import { SendMessage } from "../mail/SendEmail";
 
 const RoomHumidityDetection = () => {
   //defining state
+  const [email, setEmail] = useState("");
+
   const [humidity, setHumidity] = useState("");
   const [buzzerAlert, setBuzzerAlert] = useState("Buzzer OFF");
   let [toggle, setToggle] = useState(false);
@@ -60,6 +63,14 @@ const RoomHumidityDetection = () => {
       });
     }
   };
+  const sendEmail = () => {
+    setEmail("")
+
+    const message = "over humidity";
+    SendMessage(email, message).then((response) => {
+      console.log(response);
+    });
+  };
 
   return (
     <div className="gass-container">
@@ -81,7 +92,15 @@ const RoomHumidityDetection = () => {
         </button>
       </div>
       <div className="notification">
-        <button className="notification-btn">Send Notification</button>
+      <input
+          className="email-input"
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <button className="notification-btn" onClick={sendEmail}>Send Notification</button>
       </div>
     </div>
   );

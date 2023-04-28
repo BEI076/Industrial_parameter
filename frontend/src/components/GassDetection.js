@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { onValue, ref, update } from "firebase/database";
 import StartFirebase from "../firebase/config";
+import { SendMessage } from "../mail/SendEmail";
 
 const GassDetection = () => {
   //defining state
+  const [email, setEmail] = useState("");
+
   const [gassAlert, setGassAlert] = useState("");
   const [buzzerAlert, setBuzzerAlert] = useState("Buzzer OFF");
   let [toggle, setToggle] = useState(false);
@@ -64,7 +67,15 @@ const GassDetection = () => {
       });
     }
   };
+  
+  const sendEmail = () => {
+    setEmail("")
 
+    const message = "gass alert";
+    SendMessage(email, message).then((response) => {
+      console.log(response);
+    });
+  };
   return (
     <div className="gass-container">
       <div className="sensor">{gassAlert}</div>
@@ -83,7 +94,15 @@ const GassDetection = () => {
         </button>
       </div>
       <div className="notification">
-        <button className="notification-btn">Send Notification</button>
+      <input
+          className="email-input"
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <button className="notification-btn" onClick={sendEmail}>Send Notification</button>
       </div>
     </div>
   );
